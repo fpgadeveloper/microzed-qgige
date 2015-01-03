@@ -1,7 +1,7 @@
 microzed-qgige
 ==============
 
-Example design for the Quad Gigabit Ethernet FMC on the MicroZed
+Example design for the [Quad Gigabit Ethernet FMC](http://ethernetfmc.com "Ethernet FMC") on the [MicroZed](http://microzed.org "MicroZed")
 
 ### Description
 
@@ -13,7 +13,8 @@ Each of the 3 soft Ethernet MACs are configured with DMAs.
 ### Requirements
 
 * Vivado 2014.2
-* MicroZed
+* [Ethernet FMC](http://ethernetfmc.com "Ethernet FMC")
+* [MicroZed](http://microzed.org "MicroZed")
 
 ### License
 
@@ -27,9 +28,9 @@ website. The more people that benefit, the better.
 
 ### About the author
 
-I'm an FPGA consultant and I provide FPGA design services and training to
-innovative companies around the world. I believe in sharing knowledge and
+I'm an FPGA consultant and I provide FPGA design services to innovative
+companies around the world. I believe in sharing knowledge and
 I regularly contribute to the open source community.
 
 Jeff Johnson
-http://www.fpgadeveloper.com
+[FPGA Developer](http://www.fpgadeveloper.com "FPGA Developer")
