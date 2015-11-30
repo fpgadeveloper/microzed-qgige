@@ -17,7 +17,7 @@ Each of the 3 soft Ethernet MACs are configured with DMAs.
 
 ### Requirements
 
-* Vivado 2015.3 (see Library modifications below)
+* Vivado 2015.4 (see Library modifications below)
 * [Robust Ethernet FMC](http://ethernetfmc.com "Robust Ethernet FMC")
 * [MicroZed 7Z010](http://microzed.org "MicroZed 7Z010")
 * [MicroZed FMC Carrier](http://zedboard.org/product/microzed-fmc-carrier "MicroZed FMC Carrier")
@@ -62,10 +62,10 @@ https://github.com/fpgadeveloper/microzed-qgige/tree/master/Vivado/boards/board_
 * `microzed_7010`
 * `microzed_7020`
 
-Copy those folders and their contents into the `C:\Xilinx\Vivado\2015.3\data\boards\board_files` folder (this may
+Copy those folders and their contents into the `C:\Xilinx\Vivado\2015.4\data\boards\board_files` folder (this may
 be different on your machine, depending on your Vivado installation directory).
 
-### Library modifications for Vivado 2015.3
+### Library modifications for Vivado 2015.4
 
 To use this project, some modifications must be made to the lwIP libraries
 provided by the Xilinx SDK. These modifications can be made either to the
@@ -77,7 +77,7 @@ in the BSP sources being overwritten with the SDK sources.
 
 Open the following file:
 
-`C:\Xilinx\SDK\2015.3\data\embeddedsw\ThirdParty\sw_services\lwip141_v1_2\src\contrib\ports\xilinx\netif\xaxiemacif_dma.c`
+`C:\Xilinx\SDK\2015.4\data\embeddedsw\ThirdParty\sw_services\lwip141_v1_2\src\contrib\ports\xilinx\netif\xaxiemacif_dma.c`
 
 Replace this line of code:
 
@@ -91,7 +91,7 @@ With this one:
 
 Open the following file:
 
-`C:\Xilinx\SDK\2015.3\data\embeddedsw\ThirdParty\sw_services\lwip141_v1_2\src\contrib\ports\xilinx\netif\xemacpsif_physpeed.c`
+`C:\Xilinx\SDK\2015.4\data\embeddedsw\ThirdParty\sw_services\lwip141_v1_2\src\contrib\ports\xilinx\netif\xemacpsif_physpeed.c`
 
 Add the following define statement to the code:
 
@@ -106,7 +106,7 @@ GMII-to-RGMII converter for more details.
 
 Open the following file:
 
-`C:\Xilinx\SDK\2015.3\data\embeddedsw\ThirdParty\sw_services\lwip141_v1_2\src\contrib\ports\xilinx\netif\xaxiemacif_physpeed.c`
+`C:\Xilinx\SDK\2015.4\data\embeddedsw\ThirdParty\sw_services\lwip141_v1_2\src\contrib\ports\xilinx\netif\xaxiemacif_physpeed.c`
 
 Add the following define statement to the code:
 
@@ -244,7 +244,7 @@ but it has so far been the only way to get port 3 to work in this example.
 
 Open the following file:
 
-`C:\Xilinx\SDK\2015.3\data\embeddedsw\ThirdParty\sw_services\lwip141_v1_2\src\contrib\ports\xilinx\netif\xemacpsif_dma.c`
+`C:\Xilinx\SDK\2015.4\data\embeddedsw\ThirdParty\sw_services\lwip141_v1_2\src\contrib\ports\xilinx\netif\xemacpsif_dma.c`
 
 Find the 7 blocks of code that look like the following and comment them out. They all consist of an if statement that
 checks if we are using GEM1 and creates an offset index if we are. Search for them using `XPAR_XEMACPS_0_BASEADDR` as search term:
