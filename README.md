@@ -77,7 +77,7 @@ in the BSP sources being overwritten with the SDK sources.
 
 Open the following file:
 
-`C:\Xilinx\SDK\2015.4\data\embeddedsw\ThirdParty\sw_services\lwip141_v1_2\src\contrib\ports\xilinx\netif\xaxiemacif_dma.c`
+`C:\Xilinx\SDK\2015.4\data\embeddedsw\ThirdParty\sw_services\lwip141_v1_3\src\contrib\ports\xilinx\netif\xaxiemacif_dma.c`
 
 Replace this line of code:
 
@@ -91,7 +91,7 @@ With this one:
 
 Open the following file:
 
-`C:\Xilinx\SDK\2015.4\data\embeddedsw\ThirdParty\sw_services\lwip141_v1_2\src\contrib\ports\xilinx\netif\xemacpsif_physpeed.c`
+`C:\Xilinx\SDK\2015.4\data\embeddedsw\ThirdParty\sw_services\lwip141_v1_3\src\contrib\ports\xilinx\netif\xemacpsif_physpeed.c`
 
 Add the following define statement to the code:
 
@@ -106,7 +106,7 @@ GMII-to-RGMII converter for more details.
 
 Open the following file:
 
-`C:\Xilinx\SDK\2015.4\data\embeddedsw\ThirdParty\sw_services\lwip141_v1_2\src\contrib\ports\xilinx\netif\xaxiemacif_physpeed.c`
+`C:\Xilinx\SDK\2015.4\data\embeddedsw\ThirdParty\sw_services\lwip141_v1_3\src\contrib\ports\xilinx\netif\xaxiemacif_physpeed.c`
 
 Add the following define statement to the code:
 
@@ -235,27 +235,6 @@ and replace it with this block of code:
 ```
 
 We have just added an extra else-if statement to call our custom PHY speed function added earlier.
-
-#### Modification to xemacpsif_dma.c
-
-This modification is required for lwIP to work on port 3 which connects to the Zynq GEM1 through the
-GMII-to-RGMII converter. At this point in time, it is not completely understood why the modification "works",
-but it has so far been the only way to get port 3 to work in this example.
-
-Open the following file:
-
-`C:\Xilinx\SDK\2015.4\data\embeddedsw\ThirdParty\sw_services\lwip141_v1_2\src\contrib\ports\xilinx\netif\xemacpsif_dma.c`
-
-Find the 7 blocks of code that look like the following and comment them out. They all consist of an if statement that
-checks if we are using GEM1 and creates an offset index if we are. Search for them using `XPAR_XEMACPS_0_BASEADDR` as search term:
-
-```c
-	if (xemacpsif->emacps.Config.BaseAddress != XPAR_XEMACPS_0_BASEADDR) {
-		index = sizeof(s32_t) * XLWIP_CONFIG_N_TX_DESC;
-	}
-```
-
-This modification has been necessary since lwip141_v1_0.
 
 ### License
 
