@@ -19,7 +19,7 @@ Each of the 3 soft Ethernet MACs are configured with DMAs.
 
 * Vivado 2015.4 (see Library modifications below)
 * [Robust Ethernet FMC](http://ethernetfmc.com "Robust Ethernet FMC")
-* [MicroZed 7Z010](http://microzed.org "MicroZed 7Z010")
+* [MicroZed 7Z010 or 7Z020](http://microzed.org "MicroZed")
 * [MicroZed FMC Carrier](http://zedboard.org/product/microzed-fmc-carrier "MicroZed FMC Carrier")
 * [Xilinx Soft TEMAC license](http://ethernetfmc.com/getting-a-license-for-the-xilinx-tri-mode-ethernet-mac/ "Xilinx Soft TEMAC license")
 
