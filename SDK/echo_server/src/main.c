@@ -45,7 +45,6 @@
 #include "lwip/tcp.h"
 #include "xil_cache.h"
 
-//#include "ethfmc_axie.h"
 #include "xlwipconfig.h"
 
 /* Set the following DEFINE to the port number (0,1,2 or 3)
@@ -53,7 +52,7 @@
  * to the lwIP echo server. Only one port can be connected
  * to it in this version of the code.
  */
-#define ETH_FMC_PORT 0
+#define ETH_FMC_PORT 3
 
 /*
  * NOTE: When using ports 0..2 the BSP setting "use_axieth_on_zynq"
@@ -118,7 +117,7 @@ print_ip_settings(struct ip_addr *ip, struct ip_addr *mask, struct ip_addr *gw)
 	print_ip("Gateway : ", gw);
 }
 
-#if defined (__arm__) || defined(__aarch64__)
+#if defined (__arm__) && !defined (ARMR5)
 #if XPAR_GIGE_PCS_PMA_SGMII_CORE_PRESENT == 1 || XPAR_GIGE_PCS_PMA_1000BASEX_CORE_PRESENT == 1
 int ProgramSi5324(void);
 int ProgramSfpPhy(void);
@@ -126,11 +125,6 @@ int ProgramSfpPhy(void);
 #endif
 int main()
 {
-
-#if __aarch64__
-	Xil_DCacheDisable();
-#endif
-
 	struct ip_addr ipaddr, netmask, gw;
 
 	/* the mac address of the board. this should be unique per board */
@@ -138,7 +132,7 @@ int main()
 	{ 0x00, 0x0a, 0x35, 0x00, 0x01, 0x02 };
 
 	echo_netif = &server_netif;
-#if defined (__arm__) || defined(__aarch64__)
+#if defined (__arm__) && !defined (ARMR5)
 #if XPAR_GIGE_PCS_PMA_SGMII_CORE_PRESENT == 1 || XPAR_GIGE_PCS_PMA_1000BASEX_CORE_PRESENT == 1
 	ProgramSi5324();
 	ProgramSfpPhy();
