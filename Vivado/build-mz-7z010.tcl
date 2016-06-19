@@ -92,7 +92,7 @@ current_run -implementation [get_runs impl_1]
 puts "INFO: Project created:mz_7z010_qgige"
 
 # Create block design
-source $origin_dir/src/bd/design_1-7z010.tcl
+source $origin_dir/src/bd/design_1-mz7010.tcl
 
 # Generate the wrapper
 set design_name [get_bd_designs]
