@@ -1,6 +1,12 @@
 microzed-qgige
 ==============
 
+### This repo has moved
+
+This repo has been merged into the [Ethernet FMC Zynq GEM repo](https://github.com/fpgadeveloper/ethernet-fmc-zynq-gem "Ethernet FMC Zynq GEM repo")
+in an effort to group similar example designs into a common repository and simplify code maintenance. Please use the linked
+repository for the latest sources.
+
 Example design for the [Quad Gigabit Ethernet FMC](http://ethernetfmc.com "Ethernet FMC") on the [MicroZed](http://microzed.org "MicroZed")
 and [MicroZed FMC Carrier](http://zedboard.org/product/microzed-fmc-carrier "MicroZed FMC Carrier").
 
